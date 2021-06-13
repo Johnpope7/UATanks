@@ -7297,7 +7297,9 @@ MonoBehaviour:
   m_Target: {fileID: 105705963}
   m_Height: 30
   m_Distance: 35
-  m_Angle: 35
+  m_Angle: 45
+  m_SmoothSpeed: 0.5
+  rVelocity: {x: 0, y: 0, z: 0}
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0

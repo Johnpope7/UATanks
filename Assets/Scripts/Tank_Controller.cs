@@ -32,6 +32,7 @@ namespace TankSpace
             if (trb && input) 
             {
                 HandleMovement();
+                HandleReticle();
             }
         }
         #endregion
