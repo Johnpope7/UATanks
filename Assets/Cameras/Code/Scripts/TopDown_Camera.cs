@@ -82,6 +82,17 @@ namespace CameraSpace
             transform.position = Vector3.SmoothDamp(transform.position, finalPosition, ref rVelocity, m_SmoothSpeed); //sets final position equal to cameras position
             transform.LookAt(flatTargetPosition);
         }
+
+        void DrawGizmos()
+        {
+            if (m_Target)
+            { 
+            Gizmos.DrawLine(transform.position, m_Target.position);
+            Gizmos.DrawSphere(m_Target.position, 1.5f);
+            }
+            Gizmos.DrawSphere(transform.position, 1.5f);
+        }
+        
         #endregion
     }
 }
