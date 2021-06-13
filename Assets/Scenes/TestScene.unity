@@ -992,6 +992,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankSpeed: 15
   tankRotationSpeed: 100
+  turretTransform: {fileID: 105705955}
+  reticleTransform: {fileID: 1838352794}
 --- !u!114 &105573199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,6 +3776,7 @@ Transform:
   - {fileID: 349887457}
   - {fileID: 1865566294}
   - {fileID: 105705963}
+  - {fileID: 1838352794}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11686,11 +11689,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838454202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 234.44975, y: 144.64204, z: -61.975117}
+  m_LocalPosition: {x: 0.15097655, y: -0.13912109, z: 13.306001}
   m_LocalScale: {x: 4.522181, y: 4.522181, z: 4.522181}
   m_Children: []
-  m_Father: {fileID: 1909367756}
-  m_RootOrder: 5
+  m_Father: {fileID: 304565647}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1838454202
 GameObject:
@@ -12490,7 +12493,6 @@ Transform:
   - {fileID: 105705923}
   - {fileID: 105705941}
   - {fileID: 105705955}
-  - {fileID: 1838352794}
   m_Father: {fileID: 105705963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

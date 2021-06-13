@@ -14,8 +14,19 @@ namespace TankSpace
         public float tankSpeed = 15f;
         public float tankRotationSpeed = 100f;
 
+        [Header("Turret Properties")]
+        public Transform turretTransform;
+        public float turretLagSpeed = 7f;
+
+        [Header("Reticle Properties")]
+        public Transform reticleTransform;
+
+
+
+
         private Rigidbody trb; //stores the rigid bod required, presumably the tank
         private Tank_Inputs input; //stores the input for the tanks
+        private Vector3 finalTurretFacing;
         #endregion
 
         #region Builtin Methods
@@ -32,7 +43,9 @@ namespace TankSpace
             if (trb && input) 
             {
                 HandleMovement();
+                HandleTurret();
                 HandleReticle();
+                
             }
         }
         #endregion
@@ -47,6 +60,23 @@ namespace TankSpace
             //Rotates the tank
             Quaternion desiredRotation = transform.rotation * Quaternion.Euler(Vector3.up * (tankRotationSpeed * input.RotationInput * Time.deltaTime));
             trb.MoveRotation(desiredRotation);
+        }
+
+        protected virtual void HandleTurret() 
+        {
+            if (turretTransform) 
+            {
+                Vector3 turretFace = input.p_ReticlePosition - turretTransform.position;
+                turretFace.y = 0f;
+                finalTurretFacing = Vector3.Lerp(finalTurretFacing, turretFace, Time.deltaTime * turretLagSpeed);
+                turretTransform.rotation = Quaternion.LookRotation(finalTurretFacing);
+                
+            }
+        }
+
+        protected virtual void HandleReticle() 
+        {
+            reticleTransform.position = input.p_ReticlePosition;
         }
         #endregion
 
