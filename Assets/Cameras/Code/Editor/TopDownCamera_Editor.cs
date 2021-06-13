@@ -1,27 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class TopDownCamera_Editor : MonoBehaviour
+
+namespace CameraSpace
 {
-    #region Variable
-    #endregion
-
-    #region BuiltIn Methods
-    // Start is called before the first frame update
-    void Start()
+    [CustomEditor(typeof(TopDown_Camera))]
+    public class TopDownCamera_Editor : MonoBehaviour
     {
+        #region Variable
+        #endregion
 
+        #region Custom Methods
+
+        #endregion
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    #endregion
-
-    #region Custom Methods
-
-    #endregion
 }

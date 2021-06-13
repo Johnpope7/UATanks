@@ -7,15 +7,15 @@ namespace CameraSpace
     public class TopDown_Camera : MonoBehaviour
     {
         #region Variable
-        private Transform m_Target; //stores the target of the camera
-        private float m_Height = 30f;//this is the cameras height off the ground
-        private float m_Distance = 35f; //this is the cameras distance from its target
-        private float m_Angle = 35f; //this is the cameras angle
-        private float m_SmoothSpeed = 0.5f; //dictates camera following speed
-        private Vector3 rVelocity;
+        public Transform m_Target; //stores the target of the camera
+        public float m_Height = 30f;//this is the cameras height off the ground
+        public float m_Distance = 35f; //this is the cameras distance from its target
+        public float m_Angle = 35f; //this is the cameras angle
+        public float m_SmoothSpeed = 0.5f; //dictates camera following speed
+        public Vector3 rVelocity;
 
         #region Public Getters
-        public Transform M_Target 
+        /*public Transform M_Target 
         {
             get { return m_Target; }
         }
@@ -40,7 +40,7 @@ namespace CameraSpace
         public Vector3 RVelocity 
         {
             get { return rVelocity; }
-        }
+        }*/
         #endregion
         #endregion
 
@@ -83,14 +83,14 @@ namespace CameraSpace
             transform.LookAt(flatTargetPosition);
         }
 
-        void DrawGizmos()
+        void OnDrawGizmos()
         {
             if (m_Target)
             { 
             Gizmos.DrawLine(transform.position, m_Target.position);
-            Gizmos.DrawSphere(m_Target.position, 1.5f);
+            Gizmos.DrawSphere(m_Target.position, 1f);
             }
-            Gizmos.DrawSphere(transform.position, 1.5f);
+            Gizmos.DrawSphere(transform.position, 1f);
         }
         
         #endregion
